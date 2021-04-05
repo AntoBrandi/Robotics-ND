@@ -1,6 +1,6 @@
 from sympy import *
 from time import time
-from mpmath import radians
+from sympy.mpmath import radians
 import tf
 
 '''
@@ -24,6 +24,29 @@ test_cases = {1:[[[2.16135,-1.42635,1.55109],
                   [-2.99,-0.12,0.94,4.06,1.29,-4.12]],
               4:[],
               5:[]}
+
+
+### Define functions for Rotation Matrices about x, y, and z given specific angle.
+def rot_x(q):
+    '''Elementary Rotation Matrix along the X-Axis'''
+    R_x = Matrix([[ 1,              0,        0],
+                  [ 0,         cos(q),  -sin(q)],
+                  [ 0,         sin(q),  cos(q)]])
+    return R_x
+    
+def rot_y(q):  
+    '''Elementary Rotation Matrix along the Y-Axis'''
+    R_y = Matrix([[ cos(q),         0,  sin(q)],
+                  [      0,         1,       0],
+                  [-sin(q),         0,  cos(q)]])
+    return R_y
+
+def rot_z(q):
+    '''Elementary Rotation Matrix along the Z-Axis'''
+    R_z = Matrix([[ cos(q), -sin(q),        0],
+                  [ sin(q),  cos(q),        0],
+                  [ 0,              0,      1]])
+    return R_z
 
 
 def test_code(test_case):
@@ -64,12 +87,115 @@ def test_code(test_case):
 
     ## Insert IK code here!
     
-    theta1 = 0
-    theta2 = 0
-    theta3 = 0
-    theta4 = 0
-    theta5 = 0
-    theta6 = 0
+    # Conversion Factors
+    rtd = 180./3.14 # radians to degrees
+    dtr = 3.14/180. # degrees to radians
+
+    ### Your FK code here
+    # Create symbols
+    q1, q2, q3, q4, q5, q6, q7 = symbols('q1:8') # theta or q
+    d1, d2, d3, d4, d5, d6, d7 = symbols('d1:8')
+    a0, a1, a2, a3, a4, a5, a6 = symbols('a0:7')
+    alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7')
+
+    # Create Modified DH parameters
+    s = {alpha0:     0,    a0:      0,   d1:  0.75,
+            alpha1: -pi/2,    a1:   0.35,   d2:     0,    q2: q2-pi/2,
+            alpha2:     0,    a2:   1.25,   d3:     0,
+            alpha3: -pi/2,    a3: -0.054,   d4:  1.50,
+            alpha4:  pi/2,    a4:      0,   d5:     0,
+            alpha5: -pi/2,    a5:      0,   d6:     0,
+            alpha6:     0,    a6:      0,   d7: 0.303,    q7:       0}
+
+	# Create individual transformation matrices
+    # base_link to link_1
+    R0_1 = Matrix([[            cos(q1),              -sin(q1),                0],
+                   [sin(q1)*cos(alpha0),    cos(q1)*cos(alpha0),    -sin(alpha0)],
+                   [sin(q1)*sin(alpha0),    cos(q1)*sin(alpha0),     cos(alpha0)]])
+
+    # link_1 to link_2
+    R1_2 = Matrix([[            cos(q2),              -sin(q2),                0],
+                   [sin(q2)*cos(alpha1),    cos(q2)*cos(alpha1),    -sin(alpha1)],
+                   [sin(q2)*sin(alpha1),    cos(q2)*sin(alpha1),     cos(alpha1)]])
+
+    # link_2 to link_3
+    R2_3 = Matrix([[            cos(q3),              -sin(q3),                0],
+                   [sin(q3)*cos(alpha2),    cos(q3)*cos(alpha2),    -sin(alpha2)],
+                   [sin(q3)*sin(alpha2),    cos(q3)*sin(alpha2),     cos(alpha2)]])
+
+    # link_3 to link_4
+    R3_4 = Matrix([[            cos(q4),              -sin(q4),                0],
+                   [sin(q4)*cos(alpha3),    cos(q4)*cos(alpha3),    -sin(alpha3)],
+                   [sin(q4)*sin(alpha3),    cos(q4)*sin(alpha3),     cos(alpha3)]])
+
+    # link_4 to link_5
+    R4_5 = Matrix([[            cos(q5),              -sin(q5),                0],
+                   [sin(q5)*cos(alpha4),    cos(q5)*cos(alpha4),    -sin(alpha4)],
+                   [sin(q5)*sin(alpha4),    cos(q5)*sin(alpha4),     cos(alpha4)]])
+
+    # link_5 to link_6
+    R5_6 = Matrix([[            cos(q6),              -sin(q6),                0],
+                   [sin(q6)*cos(alpha5),    cos(q6)*cos(alpha5),    -sin(alpha5)],
+                   [sin(q6)*sin(alpha5),    cos(q6)*sin(alpha5),     cos(alpha5)]])
+
+	# Extract rotation matrices 
+    R0_1 = R0_1.subs(s)
+    R1_2 = R1_2.subs(s)
+    R2_3 = R2_3.subs(s)
+    R3_4 = R3_4.subs(s)
+    R4_5 = R4_5.subs(s)
+    R5_6 = R5_6.subs(s)
+    R0_3 = R0_1 * R1_2 * R2_3
+
+    # Compensate the Rotation between URDF and TF final link
+    R_adj = rot_z(180*dtr) * rot_y(-90*dtr)
+
+    ###
+
+
+    # Extract end-effector position and orientation from request
+    # px,py,pz = end-effector position
+    # roll, pitch, yaw = end-effector orientation
+    px = req.poses[0].position.x
+    py = req.poses[0].position.y
+    pz = req.poses[0].position.z
+
+    (roll, pitch, yaw) = tf.transformations.euler_from_quaternion(
+        [req.poses[x].orientation.x, req.poses[x].orientation.y,
+            req.poses[x].orientation.z, req.poses[x].orientation.w])
+
+    ### Your IK code here
+    # Compensate for rotation discrepancy between DH parameters and Gazebo
+    Rrpy = rot_z(yaw) * rot_y(pitch) * rot_x(roll) * R_adj
+
+    # Calculate joint angles using Geometric IK method
+    # Position of the Wirst Center
+    Wx = px - 0.303 * Rrpy[0, 2]
+    Wy = py - 0.303 * Rrpy[1, 2]
+    Wz = pz - 0.303 * Rrpy[2, 2]
+            
+    # First Three joint angles - Position Problem
+    theta1 = atan2(Wy, Wx)
+
+    side_a = 1.501
+    side_b = sqrt(pow((sqrt(Wx**2 + Wy**2) -0.35), 2) + pow((Wz - 0.75), 2))
+    side_c = 1.25
+
+    angle_a = acos((side_b**2 + side_c**2 - side_a**2)/(2 * side_b * side_c))
+    angle_b = acos((side_a**2 + side_c**2 - side_b**2)/(2 * side_a * side_c))
+    angle_a = acos((side_a**2 + side_b**2 - side_c**2)/(2 * side_a * side_b))
+
+    theta2 = pi / 2 - angle_a - atan2(Wz-0.75, sqrt(Wx**2 + Wy**2) - 0.35)
+    theta3 = pi / 2 - (angle_b + 0.036)
+
+    # Last Three joint angles - Orientation Problem
+    R0_3 = R0_3.evalf(subs={q1: theta1, q2: theta2, q3: theta3})
+    R3_6 = R0_3.inv(method="LU") * Rrpy
+
+    theta4 = atan2(R3_6[1, 2], R3_6[0, 2])
+    theta5 = atan2(sqrt(R3_6[0, 2]**2 + R3_6[1, 2]**2), R3_6[2,2])
+    theta6 = atan2(-R3_6[2, 1], R3_6[2, 0])
+
 
     ## 
     ########################################################################################
@@ -84,7 +210,7 @@ def test_code(test_case):
     ########################################################################################
 
     ## For error analysis please set the following variables of your WC location and EE location in the format of [x,y,z]
-    your_wc = [1,1,1] # <--- Load your calculated WC values in this array
+    your_wc = [Wx,Wy,Wz] # <--- Load your calculated WC values in this array
     your_ee = [1,1,1] # <--- Load your calculated end effector value from your forward kinematics
     ########################################################################################
 
