@@ -1,2 +1,39 @@
 udacity_ws/devel
 udacity_ws/build
+code/perception/python-pcl/build
+code/perception/python-pcl/dist
+
+
+code/perception/python-pcl/pcl/_pcl.cpp
+code/perception/python-pcl/pcl/_pcl.html
+code/perception/python-pcl/pcl/registration.cpp
+
+
+# Packages
+code/perception/python-pcl/*.egg
+code/perception/python-pcl/*.egg-info
+code/perception/python-pcl/dist
+code/perception/python-pcl/build
+code/perception/python-pcl/eggs
+code/perception/python-pcl/parts
+code/perception/python-pcl/bin
+code/perception/python-pcl/var
+code/perception/python-pcl/sdist
+code/perception/python-pcl/develop-eggs
+code/perception/python-pcl/.installed.cfg
+
+# Installer logs
+code/perception/python-pcl/pip-log.txt
+
+# Unit test / coverage reports
+code/perception/python-pcl/.coverage
+code/perception/python-pcl/.tox
+
+#Translations
+code/perception/python-pcl/*.mo
+
+#Mr Developer
+code/perception/python-pcl/.mr.developer.cfg
+
+# Vim
+code/perception/python-pcl/*.sw[op]
