@@ -202,7 +202,10 @@ def pr2_mover(object_list):
     dropbox_left = dropbox_param[0]['position']
     dropbox_right = dropbox_param[1]['position']
 
-    # TODO: Rotate PR2 in place to capture side tables for the collision map
+    # Rotate PR2 in place to capture side tables for the collision map
+    pr2_angle_pub.publish(-1.57)
+    rospy.sleep(10)
+    pr2_angle_pub.publish(1.57)
 
     # Get the PointCloud for a given object and obtain it's centroid
     for obj in object_list:
@@ -279,8 +282,9 @@ if __name__ == '__main__':
     pcl_object_pub = rospy.Publisher('/pr2/world/objects', PointCloud2, queue_size=1)
     pcl_table_pub = rospy.Publisher('/pr2/world/table', PointCloud2, queue_size=1)
     pcl_cluster_pub = rospy.Publisher('/pr2/world/cluster', PointCloud2, queue_size=1)
-    detected_objects_pub = rospy.Publisher('/detected_objects', DetectedObjectsArray, queue_size=1)
-    object_markers_pub = rospy.Publisher('/object_markers', Marker, queue_size=1)
+    detected_objects_pub = rospy.Publisher('/detected_objects', DetectedObjectsArray, queue_size=10)
+    object_markers_pub = rospy.Publisher('/object_markers', Marker, queue_size=10)
+    pr2_angle_pub = rospy.Publisher('/pr2/world_joint_controller/command', Float64, queue_size=10)
 
     # Load Model From disk
     model = pickle.load(open('/home/omncbar/Robotics-ND/udacity_ws/model_3.sav', 'rb'))
