@@ -100,7 +100,7 @@ class PIDController:
         self.u_p.append(p)
         self.u_i.append(i)
         self.u_d.append(d)
-        self.u_.append(u)
+        self.u.append(u)
 
         return u
 
