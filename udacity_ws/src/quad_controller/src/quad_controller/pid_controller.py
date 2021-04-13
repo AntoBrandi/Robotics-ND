@@ -91,10 +91,10 @@ class PIDController:
         u = p + i + d
         
         # Enforce actuator saturation limits
-        if u > self.umax:
-            u = self.umax
-        elif u < self.umin:
-            u = self.umin
+        # if u > self.umax:
+        #     u = self.umax
+        # elif u < self.umin:
+        #     u = self.umin
     
         # Storing the control effort history for post control observations. 
         self.u_p.append(p)
