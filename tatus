@@ -1,0 +1,329 @@
+[33mcommit a69e4e28c7e8de69a2eb677b361eb069c3b65b9e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Wed Apr 21 10:00:28 2021 +0200
+
+    restored
+
+[33mcommit 6a9afcb9d5299363a3377a82983dddbdc95573e4[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Wed Apr 21 09:47:54 2021 +0200
+
+    Deep Neural Network with Relu and saving model parameters
+
+[33mcommit d5ef24fa97840e6bac501e22d8675ca62d40d9ab[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Sat Apr 17 15:10:17 2021 +0200
+
+    REMOVING DATASET FILES
+
+[33mcommit 131ea94b929ed99c82a9726a470ee6e31a9c18cf[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Sat Apr 17 15:08:54 2021 +0200
+
+    first version of the NN lab code
+
+[33mcommit 77dda035956a3f2494b3c5da30d096043d37e6ba[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Sat Apr 17 10:07:50 2021 +0200
+
+    Neural Network for the MINST dataset
+
+[33mcommit 4bf3ba8945d3971212e21c2354805c868361aabb[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Thu Apr 15 15:31:22 2021 +0200
+
+    Implemented Gradient Descend and Back Propagation for a single
+    Perceptron neural net
+
+[33mcommit 0a3f59bae44b1167685f5194e8aa90495b3d8f65[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Wed Apr 14 17:00:06 2021 +0200
+
+    Softmax activation function
+
+[33mcommit 217c5de331d7e0ab160046babb97e1cf7b180a70[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Wed Apr 14 12:57:21 2021 +0200
+
+    Single Neuron logic for prediction and weights update
+
+[33mcommit 2db7a8f0148b02bc59ad2d85d4f4171fae785900[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Tue Apr 13 14:40:54 2021 +0200
+
+    corrected typo error in the pid implementation
+
+[33mcommit ac2ec6ff9e4411409c392b6f994782fc186d2893[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Tue Apr 13 14:39:48 2021 +0200
+
+    commented out the windup filter
+
+[33mcommit 11213a0f8746dd0f12b6bf3a1e311598e363d686[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Tue Apr 13 14:35:08 2021 +0200
+
+    Simple PID controller for the height of the drone
+
+[33mcommit b8958d4c720c0873bb9e0c0d5afcdbb7e2ca5490[m
+Author: AntoBrandi <antonio.brandi@outlook.it>
+Date:   Mon Apr 12 15:38:50 2021 +0200
+
+    Start point for the drone simulator in ROS
+
+[33mcommit 1632fdbbc6401d829a9aaf2c8cca06c78ff92a5b[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Mon Apr 12 14:59:35 2021 +0200
+
+    Closed Loop Controller for a Drone Height
+    PID Controller, windup filters and noise filter for a Drone Height
+    Controller
+
+[33mcommit 5b4e2ea4b9166a2325b79f52e14b8f4a73a92864[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Fri Apr 9 14:55:35 2021 +0200
+
+    creation of the yaml file for the evaluation of the perception stack
+    
+    TO BE TESTED\
+
+[33mcommit e9b7d89ad6d48f0524fbde7080bc959ddda95636[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Wed Apr 7 17:19:35 2021 +0200
+
+    object detection and recognition with the pr2
+
+[33mcommit 275da0725e8a4d030afb7c3cc0b822050e607374[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Wed Apr 7 15:07:59 2021 +0200
+
+    Stat point for the Perception Project with the pr2 robot
+
+[33mcommit 9e9a4e1b46d89ca61d4f9770ca899878b66e74af[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Wed Apr 7 14:19:19 2021 +0200
+
+    Object Recogniton with data coming from a point cloud
+
+[33mcommit 2c1d15526b9337ed6545a2f25a67487962f7fd68[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Wed Apr 7 12:06:25 2021 +0200
+
+    Trained SVM model that detects a defined set of objects
+
+[33mcommit cabb3b6d85ee77ca1a734c694e6054955d13c21c[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Wed Apr 7 09:15:47 2021 +0200
+
+    Scripts and model for the train images extractor
+
+[33mcommit 9ecc5ca1a1b59d00bba71eea3a90285fa245a3d5[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Tue Apr 6 19:50:28 2021 +0200
+
+    Usage of the SVM to create an image classifier
+
+[33mcommit d3ad6bc0bfed2adeca98198481c9fc551efdb7cd[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Tue Apr 6 16:05:17 2021 +0200
+
+    Instance of the SVM algorithm for a randomly generated dataset with
+    clustered data
+
+[33mcommit a70476de55ab2438e008ab54c0e0847dd9e41061[m
+Merge: 43d4cfe 731f494
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Tue Apr 6 15:07:03 2021 +0200
+
+    Merge branch 'master' of https://github.com/AntoBrandi/Robotics-ND
+
+[33mcommit 43d4cfe96b45d3b4c6932e04841981910d106faf[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Tue Apr 6 15:05:43 2021 +0200
+
+    Given a 2D rgb image extract a color histogram both for the RGB and for
+    the HSV color coding
+
+[33mcommit 731f4942cc7d155d5081c0d257f5332c2cc7fdd2[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Tue Apr 6 12:56:59 2021 +0200
+
+    From the raw point cloud extract the cluster of the objects
+
+[33mcommit 0078710a6314d67b360bda949365c8910c5606b7[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Mon Apr 5 17:19:56 2021 +0200
+
+    ros package that simulates a rgbd camera and extracts a point cloud of the viewed scene and objects in gazebo
+
+[33mcommit c415395e302c90ac640c3e7e9267661651d26e89[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Mon Apr 5 16:07:39 2021 +0200
+
+    Implementation of the K-Meand and DBSCAN algoithm for samples clustering
+    in 2D
+
+[33mcommit 20b00112071821480db336dc4e3883a141820042[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Mon Apr 5 11:44:32 2021 +0200
+
+    Implementation of a Outlier Filter of a Point Cloud via Statistical Filter
+
+[33mcommit 04ab087a89b5d484da7d306eff8d133f929a9c4d[m
+Merge: 4fcd7ac de88fc0
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Mon Apr 5 11:33:33 2021 +0200
+
+    Merge branch 'master' of https://github.com/AntoBrandi/Robotics-ND
+
+[33mcommit 4fcd7aca82c417728528dd86502240652319e66a[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Mon Apr 5 11:32:13 2021 +0200
+
+    Added RANSAC filter plane script
+    using the ransac algorithm fit a plane model in the point cloud and then remove it from the data
+
+[33mcommit de88fc03c226744e2eb85eb1a2390286ee5dd501[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Mon Apr 5 11:29:57 2021 +0200
+
+    Added sample point cloud with outliers in order to test the outlier
+    removal filter
+
+[33mcommit f3f54e5128af4b5ed94b4fd36ade6bbb2faa5b39[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Mon Apr 5 10:19:29 2021 +0200
+
+    Added PassThrough Filter to the voxel grid
+    After filtering the point cloud with the voxel grid, apply also a passthrough filter along the z-axis that filters out everything but the table
+
+[33mcommit e55db575c1ab7874d60a0145d41f2c1576c01a0e[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Mon Apr 5 10:00:11 2021 +0200
+
+    Downsampling PCL with the VoxelGrid filter
+    Usage of the filter VoxelGrid to downsample a PointCloud to reduce the number of points and so the calculation time
+
+[33mcommit 1195ac384defc844821642ee78f6997fdbdd0870[m
+Merge: 2d230f3 7aeef01
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Mon Apr 5 09:22:53 2021 +0200
+
+    Merge branch 'master' of https://github.com/AntoBrandi/Robotics-ND
+
+[33mcommit 2d230f3c4c076b3663fed0fcd49e05317c3e0f02[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Mon Apr 5 09:21:04 2021 +0200
+
+    Added Camera Calibration and Distorsions scripts
+    Scripts for the camera calibration using images of a chessboard from
+    various angulation and orientations used to extract the intrinsic camera
+    calibration poarameters
+
+[33mcommit 7aeef015cedaef5a4c2c4924191652b51614876f[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Sat Apr 3 14:47:15 2021 +0200
+
+    Added IK server
+    
+    Ik service that performs the inverse kinematics calculation for each point of a planned trajectory
+
+[33mcommit e488a2d26e2d7f837f9c157d48a40361a732d6a4[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Fri Apr 2 19:50:43 2021 +0200
+
+    Added Inverse Kinematic Notebook File
+    
+    Creation of a jupyter notebook with the inverse kinematic for the kuka
+    that will be tested and then implemented in ROS
+
+[33mcommit f16fdbc80393d59bdadd52faf7b0a66f1226c85f[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Fri Apr 2 15:28:03 2021 +0200
+
+    Forward inematic for the Kuka
+    
+    Jupyter notebook that converts the joint angles of the kuka robotic arm
+    into its gripper position in the world
+
+[33mcommit 91ed2458364e7ac6081c7e9187d114a928d6f716[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Fri Apr 2 12:25:14 2021 +0200
+
+    Restored Default urdf config with dae files also if not displayed in rviz
+
+[33mcommit d875b11cab8f717bbb544a52b3b4e2ab9a08092b[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Fri Apr 2 10:02:40 2021 +0200
+
+    Added STL files for the Kuka robot
+    
+    Old DAE file were not displayed in rviz
+
+[33mcommit 0c06d03878c76d925acfa9df12f4cb60dea2fcde[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Thu Apr 1 11:56:47 2021 +0200
+
+    Added alternative STL files for visualization in Rviz
+    
+    DAE files were not displayed correctly in Rviz
+
+[33mcommit b19c4062e03e732c5e0c0732bc9fd9226416ff48[m
+Merge: 1760ef6 4c8239b
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Thu Apr 1 11:30:41 2021 +0200
+
+    Merge branch 'master' of https://github.com/AntoBrandi/Robotics-ND
+
+[33mcommit 1760ef671a175103926fc0b5c7fee566fcd4e2ad[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Thu Apr 1 11:29:46 2021 +0200
+
+    Added Missing Files
+
+[33mcommit 4c8239b197d894da5606e8cd34167bc926a43fc2[m
+Merge: 86fc35b b6a66e7
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Thu Apr 1 11:21:53 2021 +0200
+
+    Merge branch 'master' of https://github.com/AntoBrandi/Robotics-ND
+
+[33mcommit 86fc35b8d9d56139bd4a05c62a697eb0f1b1911d[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Thu Apr 1 11:20:36 2021 +0200
+
+    Folder Refactoring
+
+[33mcommit b6a66e76d23c4a9bfc66bad294ff144b54f7cd60[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Thu Apr 1 11:12:36 2021 +0200
+
+    Kinematics Project Initialization
+    
+    Cloned the RoboND Kinematics Project into the current workspace
+
+[33mcommit efec964a8a2f4af416fa0a0cadf35b7fb956b6f3[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Thu Apr 1 10:02:57 2021 +0200
+
+    End of Forward and Inverse Kinematic Module
+    
+    Added jupyter notebooks that implements rotation and translation matrix
+    calculations and compositions using the Sympy library
+
+[33mcommit 54c02635260434ab0532520aba8d946ddb391d6e[m
+Author: AntonioBrandi <antonio.brandi@outlook.it>
+Date:   Wed Mar 31 11:01:38 2021 +0200
+
+    Added code folder for the python code external to ROS
+    
+    Jupyter notebook for the autonomous navigation in the Roversim
+    simulator
+
+[33mcommit 849eac2032b57a2ac9eda2b84c9761737e20e4a4[m
+Author: abrandi@codearchitects.com <abrandi@codearchitects.com>
+Date:   Wed Mar 31 09:39:03 2021 +0200
+
+    Initialize the ROS workspace
+    
+    Demo code for sending commands to the simple robot arm joints and implementation of the look away functionality

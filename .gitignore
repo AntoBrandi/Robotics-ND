@@ -22,6 +22,9 @@ code/perception/python-pcl/sdist
 code/perception/python-pcl/develop-eggs
 code/perception/python-pcl/.installed.cfg
 
+code/neural_networks/notMNIST_*
+code/neural_networks/notMNIST*
+
 # Installer logs
 code/perception/python-pcl/pip-log.txt
 
